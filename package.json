@@ -1,6 +1,6 @@
 {
   "name": "url-tilde-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tiny workaround for css-loader url-resolving issue",
   "keywords": [
     "loader",

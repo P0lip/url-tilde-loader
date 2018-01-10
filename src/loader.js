@@ -5,14 +5,12 @@ export default function (content, map) {
   if (this.cacheable) this.cacheable();
   const { traverse, replacement = '~/../' } = loaderUtils.getOptions(this) || {};
 
-  if (typeof map === "string") {
+  if (typeof map === 'string') {
     map = JSON.stringify(map);
   }
 
   if (map.sources) {
-    map.sources = map.sources.map(function (source) {
-      return source.replace(/\\/g, '/');
-      });
+    map.sources = map.sources.map(source => source.replace(/\\/g, '/'));
     map.sourceRoot = '';
   }
 
@@ -24,7 +22,7 @@ export default function (content, map) {
         prev: map,
         sourcesContent: true,
         inline: false,
-        annotation: false
+        annotation: false,
       } : null,
     });
     this.callback(null, result.css, result.map);

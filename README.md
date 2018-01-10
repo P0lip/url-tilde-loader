@@ -23,12 +23,12 @@ yarn add url-tilde-loader --dev
       },
     },
     {
-          loader: 'url-tilde-loader'
-          options: {
-            replacement: '~/../',
-            traverse: false, // TODO: describe me :)
-          }
-        },
+      loader: 'url-tilde-loader'
+      options: {
+        replacement: '~/../', // string to replace with
+        traverse: false, // use manual traversing
+      },
+    },
   ]
 }
 ```
