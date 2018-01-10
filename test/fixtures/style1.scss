@@ -1,0 +1,9 @@
+body {
+  @include test(0 2);
+  color: rgba($color-black, 1);
+  background: url(~assets/placeholder.svg);
+
+  & > head {
+    display: flex;
+  }
+}

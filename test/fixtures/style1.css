@@ -1,0 +1,8 @@
+html {
+	background: no-repeat url('test.svg');
+	color: red;
+}
+
+body {
+	background: repeat url('~assets/test.svg');
+}

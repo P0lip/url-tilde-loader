@@ -1,0 +1,61 @@
+{
+  "name": "url-tilde-loader",
+  "version": "0.0.1",
+  "description": "A tiny workaround for css-loader url-resolving issue",
+  "keywords": [
+    "loader",
+    "webpack",
+    "css-loader",
+    "css",
+    "scss",
+    "sass",
+    "webpack-loader"
+  ],
+  "homepage": "https://github.com/P0lip/url-tilde-loader/",
+  "bugs": {
+    "url": "https://github.com/P0lip/url-tilde-loader/issues"
+  },
+  "license": "MIT",
+  "author": "P0lip",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "main": "lib/loader.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P0lip/url-tilde-loader.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint --cache --cache-location .cache/ src/ test/",
+    "test": "jest --cache --coverage"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "postcss": "^6.0.16"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "fs-extra": "^5.0.0",
+    "jest": "^22.0.5",
+    "postcss-scss": "^1.0.3",
+    "rollup": "^0.53.4"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.js"
+    ],
+    "cacheDirectory": ".cache/",
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testEnvironment": "node"
+  }
+}

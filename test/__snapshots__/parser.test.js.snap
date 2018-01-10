@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#transform supports scss 1`] = `
+"body {
+  @include test(0 2);
+  color: rgba($color-black, 1);
+  background: url(~/../assets/placeholder.svg);
+
+  & > head {
+    display: flex;
+  }
+}
+"
+`;
+
+exports[`#transform traversal method works in the same way 1`] = `
+"html {
+	background: no-repeat url('test.svg');
+	color: red;
+}
+
+body {
+	background: repeat url('~/../assets/test.svg');
+}
+"
+`;
