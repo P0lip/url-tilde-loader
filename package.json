@@ -29,7 +29,8 @@
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint --cache --cache-location .cache/ src/ test/",
-    "test": "jest --cache --coverage"
+    "test": "jest --cache --coverage",
+    "prepublish": "yarn lint && yarn test && yarn build"
   },
   "dependencies": {
     "loader-utils": "^1.1.0",
