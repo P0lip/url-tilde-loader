@@ -3,6 +3,9 @@
   "env": {
     "jest": true
   },
+  "rules": {
+    "no-param-reassign": "warn"
+  },
   "settings": {
     "import/resolver": {
       "node": {

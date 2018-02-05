@@ -1,6 +1,6 @@
 {
   "name": "url-tilde-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A tiny workaround for css-loader url-resolving issue",
   "keywords": [
     "loader",
@@ -37,13 +37,14 @@
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "fs-extra": "^5.0.0",
     "jest": "^22.0.5",
-    "postcss-scss": "^1.0.3",
-    "rollup": "^0.53.4"
+    "rollup": "^0.53.4",
+    "rollup-plugin-babel": "^3.0.3"
   },
   "jest": {
     "collectCoverageFrom": [
