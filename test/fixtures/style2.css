@@ -1,0 +1,13 @@
+html {
+	background: no-repeat url('/~/test.svg');
+	color: red;
+	list-style: square url(~ball.svg) url(~ball2.svg);
+}
+
+body {
+	background: repeat url('~assets/test.svg');
+}
+
+body::before {
+	border-top: 2px solid url('~assets/test.svg');
+}

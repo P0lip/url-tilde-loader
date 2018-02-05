@@ -1,7 +1,7 @@
 import { replaceTilde } from 'src/utils';
 
 describe('#replaceTilde', () => {
-  test('replaces every tilde in url with given newSubstr', () => {
+  test('replaces every tilde in url with given string', () => {
     const newSubstr = '!replace';
     [{
       url: 'url(~simpleCase)',
@@ -21,6 +21,9 @@ describe('#replaceTilde', () => {
     }, {
       url: 'url("~test.svg") test url("test.svg")',
       expected: `url("${newSubstr}test.svg") test url("test.svg")`,
+    }, {
+      url: 'url("~font1.ttf") url(~/../font3.svg) url("~font2.woff")',
+      expected: `url("${newSubstr}font1.ttf") url(${newSubstr}/../font3.svg) url("${newSubstr}font2.woff")`,
     }].forEach(({ url, expected }) => {
       expect(replaceTilde(url, newSubstr)).toBe(expected);
     });

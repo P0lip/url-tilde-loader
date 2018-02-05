@@ -1,5 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`#transform accepts func as a replacement 1`] = `
+"html {
+	background: no-repeat url('/~/test.svg');
+	color: red;
+	list-style: square woohoo url(dooooge.png);
+}
+
+body {
+	background: repeat woooow;
+}
+
+body::before {
+	border-top: 2px solid to the mooooon!!!!;
+}
+"
+`;
+
+exports[`#transform generates source map 1`] = `
+Object {
+  "file": "to.css",
+  "mappings": "AAAA;CACC,sCAAsC;CACtC,WAAW;CACX;;AAED;CACC,uDAA2C;CAC3C",
+  "names": Array [],
+  "sources": Array [
+    "<input css 2>",
+  ],
+  "sourcesContent": Array [
+    "html {
+	background: no-repeat url('test.svg');
+	color: red;
+}
+
+body {
+	background: repeat url('~assets/test.svg');
+}
+",
+  ],
+  "version": 3,
+}
+`;
+
+exports[`#transform replacement function receives decl in manual mode 1`] = `
+"html {
+	background: no-repeat url('/~/test.svg');
+	color: red;
+	list-style: square url(~ball.svg) url(~ball2.svg);
+}
+
+body {
+	background: repeat url('~/../../assets/test.svg');
+}
+
+body::before {
+	border-top: 2px solid url('~assets/test.svg');
+}
+"
+`;
+
+exports[`#transform replacement function validates returned decl 1`] = `
+"html {
+	background: no-repeat url('/~/test.svg');
+	color: red;
+	list-style: square url(~ball.svg) url(~ball2.svg);
+}
+
+body {
+	background: repeat url('~assets/test.svg');
+}
+
+body::before {
+	border-top: 2px solid url('~assets/test.svg');
+}
+"
+`;
+
+exports[`#transform replaces tilde with given replacement string 1`] = `
+"html {
+	background: no-repeat url('test.svg');
+	color: red;
+}
+
+body {
+	background: repeat url('/replacement/assets/test.svg');
+}
+"
+`;
+
 exports[`#transform supports scss 1`] = `
 "body {
   @include test(0 2);
@@ -9,18 +95,6 @@ exports[`#transform supports scss 1`] = `
   & > head {
     display: flex;
   }
-}
-"
-`;
-
-exports[`#transform traversal method works in the same way 1`] = `
-"html {
-	background: no-repeat url('test.svg');
-	color: red;
-}
-
-body {
-	background: repeat url('~/../assets/test.svg');
 }
 "
 `;
